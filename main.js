@@ -74,6 +74,7 @@ input.onpaste = () => false;
 startButton.onclick = function () {
     startButton.remove();
     divList.remove();
+    input.style.display = "block"
     input.focus();
     upComing.classList.remove("hide");
     genWords();

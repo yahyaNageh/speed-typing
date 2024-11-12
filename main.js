@@ -16,7 +16,7 @@ const startButton = document.querySelector(".start"),
 
 // the words
 let words =
-    `itself camp fine desert cook scale term none glass learn dark fade smart chase show reality waste time turn until`.split(
+    `alan excitement printable instruction yards long voting watched formal customize sentences tree freedom two here print practitioners sufficiently telling drop meaningful repair immediately statement picks crazy reached vision kennedy fig indexes metabolism hearings reasonable discretion december reduces highways trail across stewart population flags muscles picture diary geek astrology hearing commissions computed providing soap computation readers summary acres drops depends handbook messages clocks specific batch metres willing enable bolivia kong advisors wool correctly pediatric bryan discount appointed betty estonia hacker tunisia card decorating powerful availability correction`.split(
         " "
     );
 
@@ -35,7 +35,7 @@ let defaultLvlSeconds = lvl[defaultLvlName];
 lvlName.innerHTML = defaultLvlName;
 lvlSec.innerHTML = defaultLvlSeconds;
 TimeLeft.innerHTML = defaultLvlSeconds;
-scoreTotal.innerHTML = words.length;
+scoreTotal.innerHTML = "20";
 //choose level
 let x = 0;
 spanList.onclick = function () {
@@ -74,7 +74,7 @@ input.onpaste = () => false;
 startButton.onclick = function () {
     startButton.remove();
     divList.remove();
-    input.style.display = "block"
+    input.style.display = "block";
     input.focus();
     upComing.classList.remove("hide");
     genWords();
@@ -94,9 +94,10 @@ function genWords() {
     //empty upcoming words
     upComing.innerHTML = "";
     //upcoming words
-    for (let i = 0; i < words.length; i++) {
+    for (let i = 0; i < 20; i++) {
         let newDiv = document.createElement("div");
-        newDiv.append(words[i]);
+        let ran = Math.floor(Math.random() * words.length);
+        newDiv.append(words[ran]);
         upComing.append(newDiv);
     }
     if (upComing.children.length === 0) {

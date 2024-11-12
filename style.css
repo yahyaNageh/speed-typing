@@ -191,12 +191,22 @@ body {
     padding-top: 8px;
     cursor: pointer;
     transition: 0.3s;
+    color: rgb(255, 255, 255);
 }
-#dificulty li:hover {
+/* #dificulty li:hover {
     color: white;
     background-color: var(--main-color);
 }
 li.active {
     color: white;
     background-color: var(--main-color);
+} */
+#dificulty li:nth-child(1) {
+    background-color: rgb(244, 208, 160);
+}
+#dificulty li:nth-child(2) {
+    background-color: rgb(171, 137, 92);
+}
+#dificulty li:nth-child(3) {
+    background-color: rgb(87, 74, 56);
 }

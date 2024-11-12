@@ -125,6 +125,34 @@ body {
     border: none;
     font-size: 18px;
 }
+@media screen and (max-width: 450px) {
+    * {
+        font-size: 15px;
+    }
+    .name {
+        font-size: 25px;
+    }
+    .start,
+    .restart {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .input {
+        padding: 0;
+    }
+    .word {
+        font-size: 40px;
+    }
+    span.bad {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .control {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
 #dificulty {
     list-style: none;
     background-color: white;
@@ -172,33 +200,3 @@ li.active {
     color: white;
     background-color: var(--main-color);
 }
-@media screen and (max-width: 450px) {
-    * {
-        font-size: 15px;
-    }
-    .name {
-        font-size: 25px;
-    }
-    .start,
-    .restart {
-        font-size: 15px;
-        padding: 10px;
-    }
-    .input {
-        padding: 0;
-    }
-    .word {
-        font-size: 40px;
-    }
-    span.bad {
-        font-size: 40px;
-    }
-}
-@media screen and (max-width: 350px) {
-    .control {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-

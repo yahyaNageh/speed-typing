@@ -10,7 +10,9 @@ const startButton = document.querySelector(".start"),
     scoreTotal = document.querySelector(".total"),
     finish = document.querySelector(".finish"),
     container = document.querySelector(".container"),
-    dif = document.querySelector("#dificulty");
+    dif = document.querySelector("#dificulty"),
+    spanList = document.querySelector(".list span"),
+    divList = document.querySelector(".list");
 
 // the words
 let words =
@@ -35,13 +37,34 @@ lvlSec.innerHTML = defaultLvlSeconds;
 TimeLeft.innerHTML = defaultLvlSeconds;
 scoreTotal.innerHTML = words.length;
 //choose level
-
-dif.addEventListener("click", (e) => {
-    defaultLvlName = e.target.value;
+let x = 0;
+spanList.onclick = function () {
+    if (x === 0) {
+        dif.style.display = "block";
+        x = 1;
+        console.log(x);
+    } else {
+        dif.style.display = "none";
+        x = 0;
+        console.log(x);
+    }
+};
+dif.addEventListener("click", (ele) => {
+    defaultLvlName = ele.target.innerHTML;
     defaultLvlSeconds = lvl[defaultLvlName];
     lvlName.innerHTML = defaultLvlName;
     lvlSec.innerHTML = defaultLvlSeconds;
     TimeLeft.innerHTML = defaultLvlSeconds;
+    Array.from(dif.children).forEach((e) => {
+        e.classList.remove("active");
+    });
+    ele.target.classList.add("active");
+});
+Array.from(dif.children).forEach((e) => {
+    e.onclick = function () {
+        dif.style.display = "none";
+        x = 0;
+    };
 });
 
 //Disable paste
@@ -50,7 +73,7 @@ input.onpaste = () => false;
 //start game
 startButton.onclick = function () {
     startButton.remove();
-    dif.remove();
+    divList.remove();
     input.focus();
     upComing.classList.remove("hide");
     genWords();
